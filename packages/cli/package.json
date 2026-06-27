@@ -1,0 +1,15 @@
+{
+  "name": "sendgrid-cli",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "commander": "^15.0.0",
+    "sendgrid-core": "workspace:*",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^26.0.1",
+    "dotenv": "^17.4.2"
+  }
+}
