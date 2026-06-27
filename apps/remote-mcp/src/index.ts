@@ -5,7 +5,7 @@ import {
   sendTelegramMessage,
   TelegramMessageInput,
   telegramMessageInputSchema,
-} from "sendgrid-core";
+} from "@nandansravesh/sendgrid-core";
 
 import { createClerkClient } from "@clerk/backend";
 import { generateClerkProtectedResourceMetadata } from "@clerk/mcp-tools/server";

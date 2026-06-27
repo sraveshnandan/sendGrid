@@ -14,7 +14,14 @@
     "dev:cli": "bun run  packages/cli/src/index.ts",
     "dev:local-mcp": "bun run packages/local-mcp/src/index.ts",
     "dev:remote-mcp": "bun run apps/remote-mcp/src/index.ts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "build:core": "bun run --filter @nandansravesh/sendgrid-core build",
+    "release:pack:core": "bun run --filter @nandansravesh/sendgrid-core pack:dry",
+    "release:core": "bun run --filter @nandansravesh/sendgrid-core prePublishOnly",
+    "release:pack:cli": "bun run --filter @nandansravesh/sendgrid-cli pack:dry",
+    "release:cli": "bun run --filter @nandansravesh/sendgrid-cli prePublishOnly",
+    "build:cli": "bun run --filter @nandansravesh/sendgrid-cli build",
+    "build:local-mcp": "bun run --filter @nandansravesh/sendgrid-mcp build"
   },
   "devDependencies": {
     "@types/bun": "^1.3.14",

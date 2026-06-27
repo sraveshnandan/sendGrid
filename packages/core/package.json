@@ -1,10 +1,23 @@
 {
-  "name": "sendgrid-core",
-  "version": "0.0.0",
-  "private": true,
+  "name": "@nandansravesh/sendgrid-core",
+  "version": "0.0.3",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": {
+    "name": "Sravesh Nandan"
+  },
   "type": "module",
   "exports": {
-    ".": "./src/index.ts"
+    ".": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "pack:dry": " bun run build && bun pm pack --dry-run",
+    "prePublishOnly": "bun run build"
   },
   "dependencies": {
     "zod": "^4.4.3"

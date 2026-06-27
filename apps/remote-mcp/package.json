@@ -11,7 +11,7 @@
     "@clerk/mcp-tools": "^0.5.0",
     "@modelcontextprotocol/sdk": "^1.29.0",
     "hono": "^4.12.27",
-    "sendgrid-core": "workspace:*",
+    "@nandansravesh/sendgrid-core": "workspace:*",
     "zod": "^4.4.3"
   },
   "devDependencies": {

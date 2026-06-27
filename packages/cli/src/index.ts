@@ -1,6 +1,7 @@
+#!/usr/bin/env node
 import { Command } from "commander";
 import "dotenv/config";
-import { sendTelegramMessage } from "sendgrid-core";
+import { sendTelegramMessage } from "@nandansravesh/sendgrid-core";
 
 import { homedir } from "node:os";
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";

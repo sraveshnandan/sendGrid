@@ -1,11 +1,27 @@
 {
-  "name": "sendgrid-cli",
-  "version": "0.0.0",
-  "private": true,
+  "name": "@nandansravesh/sendgrid-cli",
+  "version": "0.0.5",
+  "bin": {
+    "sendgrid": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": {
+    "name": "Sravesh Nandan"
+  },
   "type": "module",
+  "scripts": {
+    "build": "tsdown",
+    "pack:dry": " bun run build && bun pm  pack --dry-run",
+    "prePublishOnly": "bun run build"
+  },
   "dependencies": {
     "commander": "^15.0.0",
-    "sendgrid-core": "workspace:*",
+    "@nandansravesh/sendgrid-core": "^0.0.3",
     "zod": "^4.4.3"
   },
   "devDependencies": {

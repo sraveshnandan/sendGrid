@@ -1,14 +1,17 @@
 {
-  "name": "sendgrid-mcp",
+  "name": "@nandansravesh/sendgrid-mcp",
   "version": "0.0.0",
   "private": true,
   "type": "module",
   "exports": {
     ".": "./src/index.ts"
   },
+  "scripts": {
+    "build": "tsdown"
+  },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.29.0",
-    "sendgrid-core": "workspace:*",
+    "@nandansravesh/sendgrid-core": "workspace:*",
     "zod": "^4.4.3"
   },
   "devDependencies": {

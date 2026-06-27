@@ -4,7 +4,7 @@ import {
   sendTelegramMessage,
   TelegramMessageInput,
   telegramMessageInputSchema,
-} from "sendgrid-core";
+} from "@nandansravesh/sendgrid-core";
 import { getTelegramBotToken } from "./utils";
 
 const server = new McpServer({
