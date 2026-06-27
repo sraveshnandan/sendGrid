@@ -31,7 +31,7 @@
     },
     "packages/cli": {
       "name": "@nandansravesh/sendgrid-cli",
-      "version": "0.0.0",
+      "version": "0.0.5",
       "dependencies": {
         "@nandansravesh/sendgrid-core": "workspace:*",
         "commander": "^15.0.0",
@@ -44,13 +44,13 @@
     },
     "packages/core": {
       "name": "@nandansravesh/sendgrid-core",
-      "version": "0.0.0",
+      "version": "0.0.3",
       "dependencies": {
         "zod": "^4.4.3",
       },
     },
     "packages/local-mcp": {
-      "name": "sendgrid-mcp",
+      "name": "@nandansravesh/sendgrid-mcp",
       "version": "0.0.0",
       "dependencies": {
         "@modelcontextprotocol/sdk": "^1.29.0",
@@ -100,6 +100,8 @@
     "@nandansravesh/sendgrid-cli": ["@nandansravesh/sendgrid-cli@workspace:packages/cli"],
 
     "@nandansravesh/sendgrid-core": ["@nandansravesh/sendgrid-core@workspace:packages/core"],
+
+    "@nandansravesh/sendgrid-mcp": ["@nandansravesh/sendgrid-mcp@workspace:packages/local-mcp"],
 
     "@napi-rs/wasm-runtime": ["@napi-rs/wasm-runtime@1.1.6", "", { "dependencies": { "@tybys/wasm-util": "^0.10.3" }, "peerDependencies": { "@emnapi/core": "^1.7.1", "@emnapi/runtime": "^1.7.1" } }, "sha512-ZLv/JdUfkvOy9eCnnBaGfiO+XimbjebAeO+MRQqD/B+FR1tnRN0tpKSJHRbE8sFfS6aqsXZ67TQjfwfsxULVbg=="],
 
@@ -432,8 +434,6 @@
     "semver": ["semver@7.8.5", "", { "bin": { "semver": "bin/semver.js" } }, "sha512-Y7/KDsb8LjooZpwaqGyulO6DQlksgCncchHGk+sZIY4SBvUocMBEFH5Ur1fI4dV+Jvl0w6cjvucaIi40puRioA=="],
 
     "send": ["send@1.2.1", "", { "dependencies": { "debug": "^4.4.3", "encodeurl": "^2.0.0", "escape-html": "^1.0.3", "etag": "^1.8.1", "fresh": "^2.0.0", "http-errors": "^2.0.1", "mime-types": "^3.0.2", "ms": "^2.1.3", "on-finished": "^2.4.1", "range-parser": "^1.2.1", "statuses": "^2.0.2" } }, "sha512-1gnZf7DFcoIcajTjTwjwuDjzuz4PPcY2StKPlsGAQ1+YH20IRVrBaXSWmdjowTJ6u8Rc01PoYOGHXfP1mYcZNQ=="],
-
-    "sendgrid-mcp": ["sendgrid-mcp@workspace:packages/local-mcp"],
 
     "sendgrid-remote-mcp": ["sendgrid-remote-mcp@workspace:apps/remote-mcp"],
 

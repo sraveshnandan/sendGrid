@@ -6,12 +6,15 @@
   "exports": {
     ".": "./src/index.ts"
   },
+  "scripts": {
+    "start": "bun run src/index.ts"
+  },
   "dependencies": {
     "@clerk/backend": "^3.8.4",
     "@clerk/mcp-tools": "^0.5.0",
     "@modelcontextprotocol/sdk": "^1.29.0",
     "hono": "^4.12.27",
-    "@nandansravesh/sendgrid-core": "workspace:*",
+    "@nandansravesh/sendgrid-core": "^0.0.3",
     "zod": "^4.4.3"
   },
   "devDependencies": {
