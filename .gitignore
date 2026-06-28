@@ -4,6 +4,4 @@ dist/
 *.log
 *.env.*
 .DS_Store
-.mcp.json
-opencode.json
 .env
