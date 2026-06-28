@@ -27,7 +27,7 @@ const clerkClient = createClerkClient({
 function createServer(botToken: string) {
   const server = new McpServer({
     name: "sendgrid-remote-mcp",
-    version: "0.0.0",
+    version: "0.0.1",
   });
 
   server.registerTool(
@@ -58,32 +58,32 @@ function createServer(botToken: string) {
 
 const app = new Hono();
 
-// generates the protected resource metadata for the bot token
-function protectResourceMetaDataURL(c: Context, botToken: string) {
+function protectedResourceMetaDataURL(c: Context, botToken: string) {
   return new URL(
     `/.well-known/oauth-protected-resource/${botToken}/mcp`,
     c.req.url,
   ).toString();
 }
 
-// un authorised mcp enableJsonResponse
 function unauthorisedMcpResponse(c: Context, botToken: string) {
   c.header(
     "WWW-Authenticate",
-    `Bearer resource_metadata="${protectResourceMetaDataURL(c, botToken)}"`,
+    `Bearer resource_metadata="${protectedResourceMetaDataURL(c, botToken)}"`,
   );
-
   return c.json({ error: "Unauthorized" }, 401);
 }
 
-// adding oauth authentication
+app.get("/health", (c) => {
+  return c.json({ status: "ok" });
+});
 
 app.get("/.well-known/oauth-protected-resource/:botToken/mcp", (c) => {
+  const botToken = c.req.param("botToken");
   return c.json(
     generateClerkProtectedResourceMetadata({
       publishableKey: clerk_publishable_key,
       resourceUrl: new URL(
-        `/${c.req.param("botToken")}/mcp`,
+        `/${botToken}/mcp`,
         c.req.url,
       ).toString(),
     }),
@@ -109,6 +109,7 @@ app.post("/:botToken/mcp", async (c) => {
   } catch {
     return unauthorisedMcpResponse(c, botToken);
   }
+
   const server = createServer(botToken);
 
   const transport = new WebStandardStreamableHTTPServerTransport({
